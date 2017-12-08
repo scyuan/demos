@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<style type="text/css">
+		
+		html,body,.content{
+			padding: 0;
+			margin:0;
+			height: 100%;
+			width: 100%;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		.bg{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		.content{
+			position: relative;
+			z-index: 100;
+		}
+		ul{
+			list-style-type: none;
+		}
+		.menu_list{
+			display: block;
+			height: 50px;
+			padding: 0 30px;
+			margin: 0;
+		}
+		.menu_list li{
+			float: left;
+			height: 100%;
+			line-height: 50px;
+			margin: 0 20px;
+			font-size: 16px;
+		}
+		a{
+			color: #fff;
+			text-decoration: none;
+		}
+		.menu_list .select{
+			border-bottom: 2px solid #fff;
+		}
+		.p1{
+			width: 1000px;
+			height: 400px;
+			color: #fff;
+			margin: 0 auto;
+			margin-top: 300px;
+		}
+		.p1 p{
+			text-indent: 2em;
+		}
+		.p2{
+			width: 1000px;
+			height: 400px;
+			color: #fff;
+			margin: 0 auto;
+			margin-top: 150px;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	
+	<!-- <img src="http://api.dujin.org/bing/1920.php" alt="bing" width="100%" height="100%"> -->
+	<!-- 背景图片 -->
+	<div class="bg" style="background-image: url('timg1.jpg');background-position: center;"></div>
+	<!-- 正文内容 -->
+	<div class="content">
+		<!-- 菜单 -->
+		<ul class="menu_list">
+			<li class="select"><a href="">首页</a></li>
+			<li><a href="">状态</a></li>
+			<li><a href="">音乐</a></li>
+			<li><a href="">博客</a></li>
+			<li><a href="">关于</a></li>
+		</ul>
+
+		<div class="p1">
+			<h1>始终难舍难分头顶上那片蓝蓝的白云天</h1>
+
+			<p>我没去过草原，于是我把天空想象成草原；我没见过大海，所以我又把天空想象成大海。看着这辽阔深邃的天穹时，我常常会以为自己就在其中徜徉。可是这时的我无论怎样仰起头来，视线却再也不能躲过那些林立而起的高楼。于是，每当在草原骑马或在大海游泳时，这些建筑无疑就像悬挂在我头顶的大石头。我起初会担心它们某一刻会掉下来将我砸死。庆幸的是，它们从来没有掉下来过，尽管有时会因为脑袋的眩晕而感到这些石头在摇晃。</p>
+		</div>
+		<div class="p2">
+			<!-- 笑话 -->
+
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+<script>
+	$(function(){
+		console.log(11111);
+		$.ajax({
+			url:'http://api.laifudao.com/open/xiaohua.json',
+			dataType:'jsonp',
+			type:'get',
+			crossDomain:true,
+			success:function(data){
+				console.log(11111111111);
+				console.log(data.length);
+				var jsonData = $.parseJSON(data);
+				console.log(jsonData.length);
+			}
+		});
+		console.log(2222222)
+	})
+	
+</script>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<title>预约信息填写</title>
+	<link rel="stylesheet" type="text/css" href="css/appointment.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="css/appoint-info.css">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h3 class="info-title">预约信息填写</h3>
+		<form id="myForm" class="clearfix">
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-3" for="">请选择产品型号</label>
+				<span>*</span>
+				<div class="col-xs-9 col-sm-9">
+					<select class="form-control" value="请选择产品型号" >
+					  	<option>型号111</option>
+					  	<option>型号222</option>
+					  	<option>型号333</option>
+					  	<option>型号444</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-3" for="">产品序列号</label>
+				<span>*</span>
+				<div class="col-xs-9 col-sm-9">
+					<input type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-3 col-sm-3" for="">购机日期</label>
+				<span>*</span>
+				<div class="col-xs-9 col-sm-9">
+					<input size="16" type="text" readonly class="form-control form_datetime">
+				</div>
+			</div>
+			<div class="form-group" id="select_type">
+				<label class="col-xs-3 col-sm-3" for="">请选择需求类型</label>
+				<span>*</span>
+				<div class="col-xs-9 col-sm-9">
+					<select class="form-control" id="serv_type">
+						<option value="0">请选择需求类型</option>
+					  	<option value="1">上门安装</option>
+					  	<option value="2">上门维修</option>
+					</select>
+				</div>
+			</div>
+			<div class='form-group error_type'>
+				<label class='col-xs-3 col-sm-3'>故障现象</label><span>*</span>
+				<div class='col-xs-9 col-sm-9'>
+					<select class='form-control'>
+						<option>这个坏了</option>
+						<option>那个坏了</option>
+						<option>上面的坏了</option>
+						<option>下面的坏了</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class='form-group'>
+				<label class='col-xs-3 col-sm-3'>预约日期</label><span>*</span>
+				<div class='col-xs-9 col-sm-9'>
+					<input size='16' type='text' readonly class='form_datetime form-control'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-xs-3 col-sm-3'>联系人</label><span>*</span>
+				<div class='col-xs-9 col-sm-9'>
+					<input type='text' class='form-control'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-xs-3 col-sm-3'>联系人手机号码</label><span>*</span>
+				<div class='col-xs-9 col-sm-9'>
+					<input type='text' class='form-control' id='phone'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-xs-3 col-sm-3'>上门地址</label><span>*</span>
+				<div class='col-xs-9 col-sm-9'>
+					<div class="row">
+						<div class="col-xs-4 col-sm-4 col md-4 linkage">
+							<select class='form-control' id="province">
+								<option>省</option>
+							</select>
+						</div>
+						<div class="col-xs-4 col-sm-4 col md-4 linkage">
+							<select class='form-control' id="city">
+								<option>市</option>
+							</select>
+						</div>
+						<div class="col-xs-4 col-sm-4 col md-4 linkage">
+							<select class='form-control' id="county">
+								<option>县</option>
+							</select>
+						</div>
+					</div>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-xs-3 col-sm-3'>上传图片</label><span>*</span>
+				<div class='col-xs-9 col-sm-9'>
+					<a href="javascript:;" class="img-upload">
+						<p id='img-filename'>+选择图片</p><input size='16' type='file' id='upload-img'>
+					</a>
+				</div>
+			</div>
+			<div class="form-group horizon">
+				<a class="button" role="button" id="submit">提交</a>
+			</div>
+		</form>
+		<div class="note">
+			<ul>
+				<li><p><span class="red">*</span>为必填项。</p></li>
+				<li><p>需求类型请选择<span class="yellow">上门安装</span>或者<span class="yellow">上门维修</span>。</p></li>
+				<li><p>电话号码请务必填写正确，确保我们能联系到您。</p></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="js/citys.js"></script>
+<script>
+	window.onload=function(){
+		var img_valid = true;
+		$('.error_type').hide();
+		$('#upload-img').on('change',function(){
+			 var file = $("#upload-img").val();
+			 var fileName = file.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi,"$1");
+			 var type = file.replace(/.+\./,"").toLowerCase();
+			 if (type!="jpg"&&type!="png"&&type!="jpeg"&&type!="bmp"&&type!="gif") {
+			 	$("#img-filename").text(fileName+'.'+type);
+			 	tishi("请选择正确的图片格式~","jpg/png/jpeg/bmp/gif");
+			 	img_valid = false;
+			 }else{
+			 	$("#img-filename").text(fileName+'.'+type);
+			 	img_valid = true;
+			 }
+		});
+		$("#submit").on('click',function(){
+			var isSelect = $("#serv_type option:selected").val();
+			if (isSelect=="0") {
+				tishi("请选择需求类型~","");
+			}else{
+				var oForm = document.getElementById('myForm')
+				var oInput = document.getElementsByClassName('form-control');
+				var valid = true;
+				for (var i = 0; i < oInput.length; i++) {
+					if (oInput[i].value == "" || oInput[i].value == null) {
+						valid =false;
+						break;
+					}
+				}
+				if (img_valid&&valid) {
+					var reg_mobile = /^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+					var phone = document.getElementById("phone").value;
+					if (!reg_mobile.test(phone)) {
+						valid = false;
+						tishi("电话号码格式不正确~","");
+					}
+					var province = $('#province option:selected').text();
+					var city = $('#city option:selected').text();
+					var county = $('#county option:selected').text();
+					if (province=="省"||city=="市") {
+						tishi("省市不能为空~","");
+						valid = false;
+					}
+					if (valid) {
+						swal({
+							title: "确定提交吗？",
+							text: "请您确认所填写信息无误",
+							type: "warning",animation:"-" ,
+							showCancelButton: true,
+							cancelButtonText:"取消",
+							confirmButtonColor: "#F58220",
+							confirmButtonText: "确认", 
+							closeOnConfirm: false},
+							function(){
+								//提交表单
+							});
+						
+					}
+				}else{
+					if (!img_valid) {
+						tishi("请选择正确的图片格式~","jpg/png/jpeg/bmp/gif");
+					}else{
+						tishi("数据不能为空~","");
+					}
+					
+				}
+			}
+
+		});
+		var oSelect = document.getElementById('serv_type');
+		$("#serv_type").on('change',function(){
+			var index = oSelect.selectedIndex;
+			var value = oSelect.options[index].value;
+			if (value=="0") {
+				$('.error_type').hide();
+			}else{
+				if (value=="1") {
+					$('.error_type').hide();
+				}else{
+					$('.error_type').show();
+				}
+			}
+		});
+		init_date();
+		init_adress();
+	}
+	function tishi(title,text){
+		swal({
+			title: title,
+			text: text,
+			type: "warning",
+			animation:"-" ,
+			confirmButtonText: "确定",
+			confirmButtonColor: "#F58220"
+			});
+	}
+	function init_date(){
+		$('.form_datetime').datetimepicker({  
+            language:  'zh-CN',  
+            weekStart: 1,  
+            todayBtn:  1,  
+            autoclose: 1,  
+            todayHighlight: 1,  
+            startView: 2,  
+            forceParse: 0,  
+            showMeridian: 1  
+        }).on('changeDate', function (e) {  
+            $(this).datetimepicker('hide');  
+        }); 
+	}
+	function indexOf(objectList,value){
+		for (var i = 0; i < objectList.length; i++) {
+			if (objectList[i][Object.keys(objectList[i])[0]]==value) {
+				return i;
+			}
+		}
+	}
+	function init_options(){
+		$('#city').empty();
+		$('#city').append("<option>市</option>");
+		$('#county').empty();
+		$('#county').append("<option>县</option>");
+	}
+	function display_options(selector,objectList){
+		var option = "";
+		for (var i = 0; i < objectList.length; i++) {
+			option = option + "<option>"+objectList[i][Object.keys(objectList[i])[0]]+"</option>";
+		}
+		selector.append(option);
+	}
+	function init_adress(){
+		var citys = CITYS;
+		var province = [];
+		var city = [];
+		var county = [];
+
+		display_options($('#province'),citys);
+		
+		$('#province').on('change',function(){
+			init_options();
+			var province_selected = $("#province option:selected").text();
+			city = [];
+			$.extend(city,citys[indexOf(citys,province_selected)].c);
+			display_options($('#city'),city);
+		});
+
+		$('#city').on('change',function(){
+			$('#county').empty();
+			$('#county').append("<option>县</option>");
+			var city_selected = $("#city option:selected").text();
+			county=[];
+			$.extend(county,city[indexOf(city,city_selected)].c);
+			display_options($('#county'),county);
+		});
+	}
+</script>
+</html>

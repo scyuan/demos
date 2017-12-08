@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>俄罗斯方块</title>
+	<style type="text/css">
+		body{
+			background: #ccc;
+		}
+		.wall,.body,.fangkuai,.done{
+			width: 16px;
+			height: 16px;
+			margin: 2px;
+			float: left;
+			font-size: 10px;
+
+		}
+		.wall{
+			background: #fff;
+		}
+		.body{
+			background: #000;
+		}
+		.map{
+			width: 400px;
+			height: 600px;
+			margin: 50px auto;
+		}
+		.fangkuai{
+			background: #DD6F00;
+		}
+		.done{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="map">
+		
+	</div>
+</body>
+<script type="text/javascript" src='js/jquery-3.2.0.min.js'></script>
+<script>
+
+	var fk = [
+			[9,28,29,30],[9,29,30,49,],[9,28,29,49],[8,9,10,29],[9,10,28,29],[9,29,30,50],[8,9,29,30],[9,28,29,48],
+			[9,10,29,30],[9,29,49,69],[8,9,10,11],[8,28,29,30],[9,29,48,49],[8,9,10,30],[9,10,29,49],[10,28,29,30],
+			[9,29,49,50],[8,9,10,28],[8,9,29,49]
+			]; 
+
+	var bodys = [];
+	var walls = [];
+	var $map = $('.map');
+	function buildMap(wid,hei) {
+		for (var i = 0; i < wid*hei;i++) {
+			if (i%20==0||i%20==19||i>wid*hei-wid-1) {
+				$map.append('<div class="wall"></div>');
+				walls.push(i);
+			}else{
+				$map.append('<div class="body"></div>');
+				bodys.push(i);
+			}
+		}
+	}
+	buildMap(20,30);
+	var block = new Object();
+
+	init();
+
+	function block_down() {
+		var canMove = true;
+		for (let i = 0; i < block.body.length; i++) {
+			var className = $map.children().eq(block.body[i]+20).attr('class');
+			if (className=='wall' || className == 'done') {
+				canMove = false;
+				break;
+			}
+		}
+		if (canMove) {
+			for (let i = block.body.length-1; i >= 0; i--) {
+				$map.children().eq(block.body[i]).removeClass().addClass('body');
+				block.body[i] = block.body[i] + 20;
+				$map.children().eq(block.body[i]).removeClass().addClass('fangkuai');
+			}
+		}else{
+			clearInterval(block.timer);
+			for (let i = 0; i < block.body.length; i++) {
+				$map.children().eq(block.body[i]).removeClass().addClass('done');
+			}
+			if (!isGameOver()) {
+				block = new Object();
+				init();	
+			}
+		}
+		
+	}
+	$(window).keydown(function(event) {//当鼠标按下时，传入事件对象~
+		stopMove();
+        switch (event.keyCode) {//获取键值码
+            case 37://如果键值码为37，代表着我的键盘上的左键
+               for (var i = 0; i < block.body.length; i++) {
+               		$map.children().eq(block.body[i]).removeClass().addClass('body');
+					block.body[i] = block.body[i] - 1;
+					$map.children().eq(block.body[i]).removeClass().addClass('fangkuai');
+               }
+               break;
+            case 39:
+               for (var i = 0; i < block.body.length; i++) {
+               		$map.children().eq(block.body[i]).removeClass().addClass('body');
+					block.body[i] = block.body[i] + 1;
+					$map.children().eq(block.body[i]).removeClass().addClass('fangkuai');
+               }
+               break;
+        }
+        starMove();
+
+    })
+	function isGameOver() {
+		for (var i = 21; i < 39; i++) {
+			var className = $map.children().eq(i).attr('class');
+			if (className =='done') {
+				clearInterval(block.timer);
+				alert('game over');
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function starMove() {
+		block.timer = setInterval(function() {
+			block_down();
+		}, 100);
+
+	}
+	function stopMove() {
+		clearInterval(block.timer);
+	}
+
+	function init() {
+		
+		var tem = Math.floor(Math.random()*18);
+		
+		block.body = fk[tem];
+		for (var i = 0; i < block.body.length; i++) {
+			$map.children().eq(block.body[i]).removeClass().addClass('fangkuai');
+		}
+		starMove();
+	}
+</script>
+</html>

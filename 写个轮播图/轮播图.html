@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>轮播图</title>
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+</head>
+<body>
+	
+	<div class="wrap">
+		<div class="img-wrap">
+			<ul class="img-list">
+				<li><a href=""><img src="img/timg.jpg" alt=""></a></li>
+				<li><a href=""><img src="img/timg1.jpg" alt=""></a></li>
+				<li><a href=""><img src="img/timg2.jpg" alt=""></a></li>
+				<li><a href=""><img src="img/timg3.jpg" alt=""></a></li>
+			</ul>	
+		</div>
+		<div class="pagenation">
+			<ul class="pageIndex"></ul>
+		</div>
+		<div class="btn left"></div>
+		<div class="btn right"></div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		new Carousel($('.wrap'));
+	}
+	function Carousel(node){
+		this.$wrap = node;
+		//图片ul.img-list
+		this.$pic = node.find('.img-list');
+		//图片的张数
+		this.picNumber = this.$pic.children().length;
+		//图片的宽度
+		this.picWidth = this.$pic.children().width();
+		//上一张
+		this.$prev = node.find('.left');
+		//下一张
+		this.$next = node.find('.right');
+		//导航点
+		this.$pageIndex = node.find('.pageIndex');
+		//计数，默认第一张
+		this.count = 0;
+		this._init();
+		//自动播放
+		this.autoPlay();
+		//绑定上一张和下一张的click事件
+		this._bind();
+	}
+	Carousel.prototype = {
+		_init : function(){
+			//初始化ul.img-list的位置
+			this.$pic.css({'left':0});
+			//初始化底部导航点
+			for (var i = 0; i < this.picNumber; i++) {
+				var $li = $("<li></li>");
+				this.$pageIndex.append($li);
+			}
+			//初始第一个点为active
+			this.$pageIndex.children().eq(0).addClass('active');
+			
+		},
+		_bind : function(){
+			var _this = this;
+			//上一张事件
+			this.$prev.on('click',function(){
+				_this.prev();
+			});
+			//下一张事件
+			this.$next.on('click',function(){
+				_this.next();
+			});
+			//导航点的点击事件
+			this.$pageIndex.on('click','li',function(){
+				//获取当前点击的点的下标
+				/*_this.count = _this.$pageIndex.children.index($(this));*/
+				//此处犯了一个错误，_this.count = this.index(); 报错index方法没有定义，因为this没有被$()包裹
+				_this.count = $(this).index();
+				_this.$pic.stop().animate({left:'-'+_this.count*_this.picWidth+'px'});
+				_this.displayDian();
+			});
+			this.$wrap.on('mousemove',function(){
+				clearInterval(timer);
+			});
+			this.$wrap.on('mouseout',function(){
+				_this.autoPlay();
+			});
+		},
+		//上一张事件
+		prev : function(){
+
+			if (this.count == 0) {
+				this.count = 3;
+				this.$pic.stop().animate({left:'-'+this.count*this.picWidth+'px'});
+			}else{
+				this.count = this.count - 1;
+				this.$pic.stop().animate({left:'-'+this.count*this.picWidth+'px'});
+			}
+			this.displayDian();
+		},
+		//下一张事件
+		next : function(){
+
+			if (this.count == 3) {
+				this.count = 0;
+				this.$pic.stop().animate({left:'-'+this.count*this.picWidth+'px'});
+			}else{
+				this.count = this.count + 1;
+				this.$pic.stop().animate({left:'-'+this.count*this.picWidth+'px'});
+			}
+			this.displayDian();
+		},
+		//自动播放
+		autoPlay : function(){
+			var _this = this;
+			timer = setInterval(function(){
+				_this.next();
+			},3000);
+		},
+		//设置导航点的样式
+		displayDian : function(){
+			this.$pageIndex.children().removeClass('active');
+			this.$pageIndex.children().eq(this.count).addClass('active');
+		}
+	}
+</script>
+</html>

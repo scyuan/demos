@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		flex布局
+	</title>
+</head>
+<body>
+	<div style="display: flex;width: 500px;height: 200px;border: 1px solid #ccc;justify-content: center;align-items: center;float:left;">
+		<div style="width: 50px;height: 50px;background-color: #ccc;margin:0 10px;"></div>
+		<div style="width: 50px;height: 50px;background-color: #ccc;margin:0 10px;"></div>
+		<div style="width: 50px;height: 50px;background-color: #ccc;margin:0 10px;"></div>
+	</div>
+	<div style="width: 300px;height: 200px;border: 1px solid #ccc;float:left;">
+		<p>通过设置如下属性：</p><p>display: flex;</p>
+		<p>justify-content: center;(水平居中)</p><p>align-items: center;(垂直居中)</p>
+	</div>
+	<div style="clear: both;"></div>
+
+	<div style="display: flex;width: 500px;height: 200px;border: 1px solid #ccc;justify-content: center;align-items: center;float:left;">
+		<img src="../一个商城/img/lunbo.png" height="100px;">
+	</div>
+	<div style="width: 300px;height: 200px;border: 1px solid #ccc;float:left;">
+		<p>同样可以让一张图片居中：</p><p>display: flex;</p>
+		<p>justify-content: center;(水平居中)</p><p>align-items: center;(垂直居中)</p>
+	</div>
+	<div style="clear: both;"></div>
+
+	<div style="display: flex;width: 500px;height: 500px;border: 1px solid #ccc;align-items: center;float:left;flex-direction: row;">
+		<img src="../一个商城/img/lunbo.png" height="100px;">
+		<p>这是一张图片</p>
+		<p>这是一张图片</p>
+		<p>这是一张图片</p>
+		<p>这是一张图片</p>
+	</div>
+	<div style="width: 300px;height: 200px;border: 1px solid #ccc;float:left;">
+		<p>同样可以让一张图片居中和一段文字居中：</p><p>display: flex;</p>
+		<p>justify-content: center;(水平居中)</p><p>align-items: center;(垂直居中)</p>
+	</div>
+	<div style="clear: both;"></div>
+</body>
+</html>

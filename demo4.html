@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>图片点击放大左右切换</title>
+    <script type="text/javascript" src='http://www.datouwang.com/uploads/demo/jiaoben/2017/jiaoben947/js/jquery.min.js'></script>
+    <style>
+        #xc{
+            width:900px;
+            margin:0 auto;
+        }
+        #xc img{
+            float:left;
+            width:300px;
+            cursor:pointer;
+        }
+        .gray{
+            display:none;
+            position:fixed;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            background:rgba(0,0,0,0.6);
+        }
+        .showImg{
+            display:none;
+            position: absolute;
+            top: 37px;
+            left: 365px;
+            width: 820px;
+            height: 512px;
+            border: 10px solid #fff;
+       }
+        .showImg img.prev{
+            position: absolute;
+            top: 230px;
+            left: -63px;
+            cursor:pointer;
+        }
+        .showImg img.next{
+            position:absolute;
+            top: 230px;
+            left: 870px;
+            cursor:pointer;
+       }
+    </style>
+</head>
+<body>
+    <div id="xc">
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152247enooreornrre1zca.jpg"  />
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152606vaqgcsqzyhw9dd0q.jpg"  />
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152427alkrlnhtkkghjjeu.jpg"  />
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152247c00jnfwzfjqakjrj.jpg"  />
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152247nm4jbbkbbklg4blp.jpg"  />
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152247etznl2kk9nnk1i2n.jpg"  />
+    </div>
+    <div class="gray"></div>
+    <div class="showImg">
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152301mz6lgplg15rnnrl8.png" class="prev">
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152246ozacp0x2pxcecme2.png" class="next">
+        <img src="http://cdn.attach.qdfuns.com/notes/pics/201708/28/152247enooreornrre1zca.jpg" class="bigImg">
+    </div>
+ <script type="text/javascript" charset="utf-8">
+     var index=0;
+     var bigSrc="";
+
+
+    $("#xc img").click(function(){
+        index=$(this).index();
+        $(".gray").show();
+        $(".showImg").show();
+        bigSrc=$(this).attr("src");
+        $(".showImg img.bigImg").attr("src",bigSrc);
+    })
+    $(".gray").click(function(){
+        $(".gray").hide();
+        $(".showImg").hide();
+    });
+    $(".showImg img.next").click(function(){
+          index++;
+          if(index >$("#xc img").length-1){
+                        //index=0;
+                alert("已经是最后一张图片啦！！！！");
+          }
+          bigSrc=$("#xc img").eq(index).attr("src");
+         $(".showImg img.bigImg").attr("src",bigSrc);
+             
+         
+      });
+
+$(".showImg img.prev").click(function(){
+         index--;
+         if(index<0){
+                  index=$("#xc img").length-1;
+                  //alert("第一张图片！！！！");
+         }
+          bigSrc=$("#xc img").eq(index).attr("src");
+         $(".showImg img.bigImg").attr("src",bigSrc);
+         
+});
+</script>
+</body>
+
+</html>

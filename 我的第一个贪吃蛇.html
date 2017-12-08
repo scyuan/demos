@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>贪吃蛇</title>
+	<style type="text/css">
+		.container{
+			width: 600px;
+			height: 600px;
+			margin: 10px auto;
+			background: black;
+		}
+		div{
+			width: 60px;
+			height: 60px;
+			float: left;
+			text-align: center;
+			line-height: 60px;
+		}
+		.wall{
+			color: #000;
+			background: #fff;
+		}
+		.land{
+			color: white;
+			background: #000;
+		}
+		.snake{
+			text-align: center;
+			background: #fff;
+		}
+		.food{
+			text-align: center;
+			background: #FF6700;
+		}
+	</style>
+</head>
+<body>
+	<div class="container"></div>
+</body>
+	<script type="text/javascript" src='js/jquery-3.2.0.min.js'></script>
+	<script>
+		var wall = [];
+		var land = []; 
+		function buildMap(num){
+			for (var i = 0; i < num*num; i++) {
+				if (i<10||i>89||i%num==0||i%num==9) {
+					$('.container').append('<div class="wall">'+i+'</div>');
+					wall.push(i);
+				}else{
+					$('.container').append('<div class="land">'+i+'</div>');
+					land.push(i);
+				}
+			}
+		}
+		buildMap(10);
+		//蛇
+		var snake = new Object();
+		//蛇的当前方向，默认是向右
+		snake.direction = 'right';
+		snake.timmer = null;
+		/*蛇的身体
+		  一个数组，从头到尾保存蛇身在land中的编号
+		*/
+		var snakeArr = [];
+		
+		function food() {
+			var index = Math.floor(Math.random()*land.length)+1;
+			$('.container').children().eq(land[index]).removeClass('land');
+			$('.container').children().eq(land[index]).addClass('food');
+		}
+		function move(direction){
+			var num = 0;
+			switch(direction){
+				case 'left':
+	                num = -1;
+	                break;
+	            case 'right':
+	                num = 1;
+	                break;
+	            case 'up':
+	                num = -10;
+	                break;
+	            case 'down':
+	                num = 10;
+	                break;
+			}
+			var next = parseInt(snakeArr[0])+num;
+			console.log(next);
+			var className = $('.container').children().eq(next).attr('class').toString();
+			console.log(className);
+			//通过className判断下一步是否会相撞
+			if (className == 'wall' || className == 'snake') {
+				clearInterval(snake.timmer);
+				return ;
+			}else if (className == 'food') {
+				$('.container').children().eq(next).removeClass();
+				$('.container').children().eq(next).addClass('snake');
+				snakeArr.unshift(next);
+				var indexOfNext = land.indexOf(next);
+				land.splice(indexOfNext,1);
+				food();
+				return ;
+			}
+			var lastIndex = snakeArr[snakeArr.length-1];
+			$('.container').children().eq(next).removeClass();
+			$('.container').children().eq(next).addClass('snake');
+			snakeArr.unshift(next);
+			var indexOfNext = land.indexOf(next);
+			land.splice(indexOfNext,1);
+
+			$('.container').children().eq(lastIndex).removeClass();
+			$('.container').children().eq(lastIndex).addClass('land');
+			snakeArr.splice(snakeArr.length-1,1);
+			land.push(lastIndex);
+			console.log(snakeArr);
+		}
+		function autoMove() {
+			snake.timmer=setInterval(function(){
+				move(snake.direction);
+			},200);
+		}
+		function getPos() {
+			var index = Math.floor(Math.random()*land.length)+1;
+			return index;
+		}
+		//初始化函数
+		function init(){
+			//首先随机一个蛇的开始位置
+			var index = getPos();
+			var initPos = land[index];
+			do{
+				index = getPos();
+				initPos = land[index];
+			}while(initPos%10>6)
+			snakeArr.push(initPos);
+			$('.container').children().eq(snakeArr[0]).removeClass('land');
+			$('.container').children().eq(snakeArr[0]).addClass('snake');
+			//在land中删除这个元素
+			land.splice(index,1);
+			//随机生成一个food
+			food();
+			//蛇自动运动
+			autoMove();
+		}
+		init();
+		$(window).keydown(function(event) {//当鼠标按下时，传入事件对象~
+        switch (event.keyCode) {//获取键值码
+            case 37://如果键值码为37，代表着我的键盘上的左键
+                if (snake.direction != 'right') {//判断是否当前的方向为右，因为，我们的贪吃蛇不能回头~
+                    snake.direction = 'left';//如果不是的话，我们将方向改为左
+                }
+                break;//跳出swich
+                //下面的case语句意思基本雷同，我将不做太多的解
+            case 38:
+
+                if (snake.direction != 'down') {
+                    snake.direction = 'up';
+                }
+                break;
+            case 39:
+                if (snake.direction != 'left') {
+                    snake.direction = 'right';
+                }
+                break;
+            case 40:
+                if (snake.direction != 'up') {
+                    snake.direction = 'down';
+                }
+                break;
+        }
+    })
+	</script>
+</html>

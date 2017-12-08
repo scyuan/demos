@@ -1,0 +1,104 @@
+@media all and (min-width: 900px) {
+	.menu1,.header .content .logo1{
+		display: none;
+	}
+	
+}
+@media all and (max-width: 1100px) {
+	.menu{
+		float: left;
+	}
+	.menu li{
+		padding: 0 30px;
+	}
+	.header .content{
+		width: 100%;
+	}
+	.img-wrap{
+		height: 450px;
+	}
+	.wenzi-img{
+		width: 270px;
+		height: 117px;
+		bottom: 58px;
+		left: 49px;
+	}
+	.big-img{
+		width: 576px;
+		height: 387px;
+	}
+	.video{
+		width: 343.8px;
+		height: 230.4px;
+		top: 20.7px;
+		left: 111.5px;
+	}
+	.sub-footer{
+		width: 100%;
+	}
+	.footer .container{
+		width: 100%;
+	}
+
+}
+@media all and (max-width: 900px) {
+	.menu,.header .content .logo{
+		display: none;
+	}
+	.header{
+		height: 100px;
+		background: #fff;
+	}
+	.header .content{
+		height: 100px;
+	}
+	.img-wrap{
+		height: 350px;
+	}
+	.wenzi-img{
+		position: relative;
+		width: 216px;
+		height: 93.6px;
+		margin: 0 auto;
+		bottom: -250px;
+		left: 0;
+	}
+	.big-img{
+		position: relative;
+		width: 288px;
+		height: 193.5px;
+		margin: 0 auto;
+		top: -80px;
+	}
+	.video{
+		width: 171.9px;
+		height: 115.2px;
+		top: 10.7px;
+		left: 56.5px;
+	}
+	.banner{
+		margin-top: 100px;
+	}
+	.title{
+		width: 322px;
+	}
+	.title>.line{
+		width: 80%;
+	}
+	.partner .container{
+		width: 100%;
+	}
+	.sub-footer{
+		width: 100%;
+	}
+	.footer .container{
+		width: 100%;
+	}
+}
+@media all and (max-width: 767px) {
+	.footer .container .row div{
+		padding-top: 4px;
+		line-height:20px;
+		font-size: 12px;
+	}
+}

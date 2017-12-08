@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+	<div class="header">
+		<div class="content">
+			<div class="logo">
+				<img src="img/logo.png" >
+			</div>
+			<ul class="menu clearfix">
+				<li><a href="">首页</a></li>
+				<li><a href="">移动校园</a></li>
+				<li><a href="">经典案例</a></li>
+				<li><a href="">公司动态</a></li>
+				<li><a href="javascript:">招贤纳士</a></li>
+				<li><a href="javascript:">联系我们</a></li>
+			</ul>
+			<div class="logo1">
+				<img src="img/logo.png" >	
+			</div>
+			<ul class="menu1 clearfix">
+				<li><a href="">首页</a></li>
+				<li><a href="">移动校园</a></li>
+				<li><a href="">经典案例</a></li>
+				<li><a href="">更多</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="banner clearfix">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="img-wrap">
+						<div class="wenzi-img"></div>
+						<div class="big-img">
+							<div class="video">
+								<video src="video/v1.mp4" controls></video>
+								<div class="play-icon"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="img-wrap img-wrap2">
+						<div class="wenzi-img"></div>
+						<div class="big-img big-img2"></div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="img-wrap img-wrap3">
+						<div class="wenzi-img"></div>
+						<div class="big-img big-img3"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pagenation">
+			<ul>
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="enlarge-banner">
+		<div class="title">
+			<img src="img/index/t_c.png" alt="">
+			<p>经典案例</p>
+			<img src="img/index/line.png" alt="" class="line">
+		</div>
+		<div class="banner-wrap">
+			<ul>
+                <li><img src="img/index/i1.png" alt=""></li>
+                <li><img src="img/index/i2.png" alt=""></li>
+                <li><img src="img/index/i3.png" alt=""></li>
+                <li><img src="img/index/i4.png" alt=""></li>
+                <li><img src="img/index/i5.png" alt=""></li>
+                <li><img src="img/index/i6.png" alt=""></li>
+                <li><img src="img/index/i7.png" alt=""></li>
+                <li><img src="img/index/i8.png" alt=""></li>
+                <li><img src="img/index/i9.png" alt=""></li>
+            </ul>
+            <div class="btn left"></div>
+            <div class="btn right"></div>
+		</div>
+	</div>
+
+	<div class="partner">
+		<div class="title">
+			<img src="img/index/rd.png" alt="">
+			<p>合作伙伴</p>
+			<img src="img/index/line.png" alt="" class="line">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-4"><img src="img/index/rd1.jpg"></div>
+				<div class="col-xs-12 col-sm-4 col-md-4"><img src="img/index/rd2.jpg"></div>
+				<div class="col-xs-12 col-sm-4 col-md-4"><img src="img/index/rd3.jpg"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="sub-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4 col-md-4"><p>备案号：蜀备13025447号-1</p></div>
+					<div class="col-xs-12 col-sm-4 col-md-4"><p>©2013-2017 版权所有</p></div>
+					<div class="col-xs-12 col-sm-4 col-md-4"><p>成都兰途网络科技有限公司</p></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/lunbo.js"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+		new Carousel($('.banner'));
+		new Carousel1($('.enlarge-banner'),window);
+	}
+	
+	</script>
+</html>

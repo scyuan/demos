@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<title>工资详情</title>
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
+</head>
+<body>
+	<div class="mengban"></div>
+	<div class="loading data hide">
+		<div class="header">
+			工资详情
+			<a href="javascript:;" id='edit'></a>
+		</div>
+		<div class="container">
+			<img src="img/load.png" width="90%" class="img-responsive" alt="">
+			<div class="please_wait">
+				<img src="img/load1.png" alt="">
+				<p>请耐心等待</p>
+			</div>
+		</div>
+	</div>
+	<div class="error data hide">
+		<div class="header">
+			工资详情
+			<a href="javascript:;" id='edit'></a>
+		</div>
+		<div class="container">
+			<img src="img/error.png" width="90%" class="img-responsive" alt="">
+			<div class="please_wait">
+				<p>找不到数据</p>
+			</div>
+		</div>
+	</div>
+	<div class="container data">
+		<div class="header">
+			工资详情
+			<a href="javascript:;" id='edit'></a>
+		</div>
+		<div class="time">
+			<div class="date">
+				<p><span id="year">2017</span>年&nbsp;<span id=month>12</span>月</p>
+				<div class="jiantou"></div>
+			</div>
+			<div class="money">
+				<p>实发工资:<span id="salary">10000.00</span></p>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="tab_menu">
+				<ul class="aul">
+					<li class="active br radius-l">应发工资</li>
+					<li class="br">应扣工资</li>
+					<li class="br">实发工资</li>
+					<li class="radius-r">公司承担</li>
+				</ul>
+			</div>
+			 <div id="boxs">
+				<div class="box1">
+					<div class="box11">
+						<p class="title">应发工资</p>
+						<ul class="bul">
+							<li>
+								<p class="item">固定工资基数</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">固定工资调整</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">当月绩效工资/奖金</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">月绩效分数/奖金等级</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">特殊岗位津贴</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">阳光补贴</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">高温补贴</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">工龄工资</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">夜班津贴</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">加班工资</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">其他应发</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">最低工资调整</p>
+								<p class="item_number">10000.00</p>
+							</li>
+						</ul>
+						<div class="total">
+						<p class="p">应发合计：<span class="total_salary">100000.00</span></p>
+					</div>
+					</div>
+					
+					<div class="books">
+						<div class="a"></div>
+					</div>
+				</div>
+				<div class="box1">
+					<div class="box11">
+						<p class="title">应扣工资</p>
+						<ul class="bul">
+							<li>
+								<p class="item">事假工资扣款</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">病假工资扣款</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">当月绩效工资/奖金</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">公积金扣款</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">公积金补扣</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">社保扣费</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">社保补扣</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">其他应扣</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">税前工资</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">扣个调税</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">扣工会费</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">行政扣款</p>
+								<p class="item_number">10000.00</p>
+							</li>
+						</ul>
+						<div class="total">
+						<p class="p">扣款合计：<span class="total_salary">100000.00</span></p>
+					</div>
+					</div>
+					
+					<div class="books">
+						<div class="a"></div>
+					</div>
+				</div>
+				<div class="box1">
+					<div class="box11">
+						<p class="title">实发工资</p>
+						<ul class="bul">
+							<li>
+								<p class="item">税后调整</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">工资卡所属银行</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">工资卡号</p>
+								<p class="item_number">6216613200015313324</p>
+							</li>
+						</ul>
+						<div class="total">
+						<p class="p">实发工资：<span class="total_salary">100000.00</span></p>
+					</div>
+					</div>
+					
+					<div class="books">
+						<div class="a"></div>
+					</div>
+				</div>
+				<div class="box1">
+					<div class="box11">
+						<p class="title">本月公司承担的个人费用合计</p>
+						<ul class="bul">
+							<li>
+								<p class="item">公司承担的社保费用</p>
+								<p class="item_number">10000.00</p>
+							</li>
+							<li>
+								<p class="item">公司承担的公积金费用</p>
+								<p class="item_number">10000.00</p>
+							</li>
+						</ul>
+						<div class="total">
+						<p class="p">人工成本费用合计：<span class="total_salary">100000.00</span></p>
+					</div>
+					</div>
+					
+					<div class="books">
+						<div class="a"></div>
+					</div>
+				</div>
+				</div>
+
+			<!-- 日期弹窗 -->
+			<div class="date_modal">
+				<p class="modal_title">选择日期</p>
+				<div class="date_box">
+					<p class="date_title"><span>2017</span>年&nbsp;<span>9</span>月</p>
+					<div class="date_select">
+						<div class="year">
+							<p>年</p>
+							<div class="select_year">
+								<div class="plus">+</div>
+								<div class="number">
+									<ul><li></li><li></li><li></li></ul>
+								</div>
+								<div class="sub">-</div>
+							</div>
+						</div>
+						<div class="month">
+							<p>月</p>
+							<div class="select_month">
+								<div class="plus">+</div>
+								<div class="number">
+									<ul><li></li><li></li><li></li></ul>
+								</div>
+								<div class="sub">-</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-list">
+					<div class="btn submit" id='submit_date'>确定</div>
+					<div class="btn cancel" id='cancel_date'>取消</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src='js/jquery-3.2.0.min.js'></script>
+<script>
+
+	function plusYear($year_ul){
+		var max = parseInt($year_ul.children().last().text())+1;
+		$year_ul.children().first().text(max);
+		$year_ul.append($year_ul.children().first());
+		$year_ul.css({"top":'0'});
+		$year_ul.stop().animate({top:'-100%'});
+	}
+	function subYear($year_ul){
+		var max = parseInt($year_ul.children().first().text())-1;
+		$year_ul.children().last().text(max);
+		$year_ul.prepend($year_ul.children().last());
+		$year_ul.css({"top":'-200%'});
+		$year_ul.stop().animate({top:'-100%'});
+	}
+
+	function getSalaryDetail(beginDate,endDate){
+		$.ajax({
+			type:'',
+			url:'',
+			data:{},
+			dataType:'',
+			beforSend:function(){
+				//默认载入loading页面
+				$('.data').removeClass('hide').eq(0).addClass('hide');
+			},
+			success:function(data){
+				//如果获取数据，渲染数据,载入数据显示页面
+				$('.data').removeClass('hide').eq(2).addClass('hide');
+				
+				//数据为空	
+				$('.data').removeClass('hide').eq(1).addClass('hide');
+			}
+		});
+	}
+
+	window.onload=function(){
+
+		//初始化填充工资各项数据
+		getSalaryDetail();
+
+		//弹出日期选择弹窗
+		var $jiantou = $('.jiantou');
+		$jiantou.on('click',function(){
+			$mengban.show();
+			$date_modal.show();
+		});
+
+		//跳转修改个人信息页面
+		$('#edit').on('click',function(){
+
+		});
+
+		//初始化日期弹窗数据
+		var $date_modal = $('.date_modal');
+		var $year_ul = $('.select_year').find('ul');
+		var $year_li = $year_ul.children();
+		var $year_plus = $('.select_year').find('.plus');
+		var $year_sub = $('.select_year').find('.sub');
+
+		var $month_ul = $('.select_month').find('ul');
+		var $month_li = $month_ul.children();
+		var $month_plus = $('.select_month').find('.plus');
+		var $month_sub = $('.select_month').find('.sub');
+		var $btn_submit = $('#submit_date');
+		var $btn_cancel = $('#cancel_date');
+		//背景变灰的蒙版
+		var $mengban = $('.mengban');
+		//取消事件
+		$btn_cancel.on('click',function(){
+			$mengban.hide();
+			$date_modal.hide();
+		});
+		
+		var $span_year = $('#year');
+		var $span_month = $('#month');
+
+		$mengban.hide();
+		$date_modal.hide();
+		
+
+		//确定选择时间事件
+		$btn_submit.on('click',function(){
+			$span_year.text($year_ul.children().eq(1).text());
+			$span_month.text($month_ul.children().eq(1).text());
+
+			$mengban.hide();
+			$date_modal.hide();
+
+			//获取年月，从数据库获取数据...填充数据到本页面
+
+			getSalaryDetail();
+			
+		});
+
+		var height = $year_li.eq(0).height();
+
+		var date = new Date();
+		var year = date.getFullYear()-1;
+		var month = date.getMonth();
+
+		$year_li.each(function(){
+			var index = $(this).index();
+			$(this).text((year+index));
+		});
+		$month_li.each(function(){
+			var index = $(this).index();
+			$(this).text((month+index));
+		});
+
+		//年份的加减事件
+		$year_plus.on('click',function(){
+			plusYear($year_ul);
+		});
+		$year_sub.on('click',function(){
+			subYear($year_ul);
+		});
+
+		//月份的加减事件
+		$month_plus.on('click',function(){
+			var max = parseInt($month_ul.children().last().text())+1;
+			if (max>12) max=1;
+			//当前月为12月时，月份变为1月，年份加1
+			if ($month_ul.children().eq(1).text()=="12") plusYear($year_ul);
+
+			$month_ul.children().first().text(max);
+			$month_ul.append($month_ul.children().first());
+			$month_ul.css({"top":'0'});
+			$month_ul.stop().animate({top:'-100%'});
+		});
+		$month_sub.on('click',function(){
+			var max = parseInt($month_ul.children().first().text())-1;
+			if (max==0) max=12;
+			//当前月为1月时，月份变为12月，年份减1
+			if ($month_ul.children().eq(1).text()=="1") subYear($year_ul);
+
+			$month_ul.children().last().text(max);
+			$month_ul.prepend($month_ul.children().last());
+			$month_ul.css({"top":'-200%'});
+			$month_ul.stop().animate({top:'-100%'});
+		});
+
+
+
+		var $li_titles = $('.aul').children();
+		var $divs_box = $('#boxs').children();
+		$divs_box.eq(0).show().siblings().hide();
+
+		//添加点击事件
+		$li_titles.on('click',function(){
+			var index = $(this).index();
+			//给按钮改变class样式
+			$li_titles.removeClass('active').eq(index).addClass('active');
+			$divs_box.hide().eq(index).show();
+		})
+		
+	}
+</script>

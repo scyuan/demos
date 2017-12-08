@@ -1,0 +1,404 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+p{
+	margin: 0;
+}
+hr{
+	margin: 0;
+}
+.header{
+	width: 100%;
+	height: 120px;
+	background-color: white;
+}
+.header .container{
+	width: 1170px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 34px 0;
+}
+.header img{
+	display: block;
+	float: left;
+}
+.header hr{
+	float: left;
+	width: 1px;
+	border:none;
+	height: 52px;
+	background-color: #E8E8E8;
+	margin: 0 20px;
+}
+.hot_line{
+	float: right;
+}
+.nav{
+	height: 50px;
+	widows: 100%;
+	background-color: #00659C;
+}
+.nav .container{
+	width: 1170px;
+	height: 100%;
+	margin: 0 auto;
+}
+ul{
+	list-style-type: none;
+}
+li{
+	float: left;
+}
+.nav ul li {
+	display: block;
+	padding: 0 43.5px;
+	line-height: 50px;
+	color: white;
+}
+.nav ul li a{
+	font-size: 15px;
+	color: white;
+	text-decoration: none;
+}
+.nav hr{
+	float: left;
+	width: 1px;
+	border:none;
+	height: 13px;
+	background-color: #E8E8E8;
+	margin-top: 18.5px;
+}
+.banner{
+	position: relative;
+	height: 477px;
+	width: 100%;
+	background: url("../resources/img/banner.png") no-repeat;
+	background-size: cover;
+}
+.banner .container{
+	width: 1170px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+.banner_wenzi{
+	padding: 0 100px;
+	width: 100%;
+	height: 160px;
+	margin: 20px 0;
+	text-align: right;
+}
+.banner_detail{
+	position: relative;
+	padding: 0 100px;
+	width: 100%;
+	height: 157px;
+}
+.div{
+	position: absolute;
+	padding: 30px 20px;
+	width: 280px;
+	height: 100%;
+}
+.div1{
+	left: 100px;
+	top: 0;
+	background-color: rgba(0,110,170,0.9);
+}
+.div2{
+	left: 445px;
+	top: 0;
+	background-color: rgba(207,208,220,0.8);
+}
+.div3{
+	right: 100px;
+	top: 0;
+	background-color: rgba(207,208,220,0.8);
+}
+.div1 hr{
+	width: 100%;
+	height: 1px;
+	background-color:#0C699E; 
+	border:none;
+}
+.c{
+	color: white;
+	font-size: 14px;
+	text-align: center;
+}
+.lunbo{
+	width: 100%;
+	height: 270px;
+	background-color: #EFEFEF;
+	padding: 20px 0;
+}
+.lunbo .container{
+	position: relative;
+	height: 100%;
+	width: 1370px;
+	margin: 0 auto;
+}
+.swiper-container {
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: red;	
+	/* Center slide text vertically */
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+	justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;*/
+}
+.swiper-button-next{
+	background: url("../resources/img/r.png") no-repeat center;
+	background-size: contain;
+}
+.swiper-button-prev{
+	background: url("../resources/img/l.png") no-repeat center;
+	background-size: contain;
+}
+.blue_div{
+	width: 100%;
+	height: 140px;
+	background-color: #006EAA;
+	padding: 40px 90px;
+}
+.icon{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+}
+.a{
+	background:url("../resources/img/1.png") no-repeat center;
+}
+.b{
+	background:url("../resources/img/2.png") no-repeat center;
+}
+.cc{
+	background:url("../resources/img/3.png") no-repeat center;
+}
+.d{
+	background:url("../resources/img/4.png") no-repeat center;
+}
+.white_div{
+	width: 100%;
+	height: 90px;
+	background-color: white;
+}
+.intro{
+	width: 100%;
+	height: 370px;
+	background-color: white;
+}
+.intro .container{
+	width: 1170px;
+	height: 100%;
+	padding: 50px 0;
+	margin: 0 auto;
+}
+.chinese{
+	color: #006EAA;
+	font-size: 25px;
+	display: inline-block;
+	font-weight: bold;
+}
+.title{
+	padding-bottom: 40px;
+}
+.english{
+	color: #999999;
+	font-size: 20px;
+	display: inline-block;
+}
+.intro .wenzi{
+	padding-bottom: 20px;
+}
+.intro .wenzi p{
+	color: #8C8C8C;
+}
+.divs{
+	position: relative;
+	height: 135px;
+	width: 100%;
+}
+.ddd{
+	position: absolute;
+	height: 100%;
+	width: 340px;
+	top: 0;
+	background-color: red;
+}
+.d11{
+	left: 0;
+}
+.d22{
+	left: 415px;
+}
+.d33{
+	left: 830px;
+}
+.ddd .aaa{
+	width: 100%;
+	height: 60px;
+	background-color: #006EAA;
+	padding: 15px 25px;
+}
+.ddd .bbb{
+	width: 100%;
+	height: 75px;
+	background-color: white;
+	padding: 15px 25px;
+	border:1px solid #999;
+	border-top: none;
+}
+.label1{
+	background-color: #006EAA;
+	width: 100%;
+	height: 104px;
+}
+.label1 .container{
+	width: 1170px;
+	height: 100%;
+	margin: 0 auto;
+}
+.content {
+	width: 100%;
+	background-color: white;
+}
+.content .container{
+	width: 1170px;
+	margin: 0 auto;
+}
+.case{
+	width: 100%;
+	height: 465px;
+	padding: 50px 0;
+}
+.case_detail{
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+.case1{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 340px;
+}
+.case2{
+	position: absolute;
+	left: 415px;
+	top: 0;
+	height: 100%;
+	width: 340px;
+}
+.case3{
+	position: absolute;
+	left: 830px;
+	top: 0;
+	height: 100%;
+	width: 340px;
+}
+.news_content{
+	position: relative;
+	width: 100%;
+	height: 346px;
+}
+.news_list {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 750px;
+}
+.news_img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 370px;
+	height: 316px;
+	background:url("../resources/img/new2.png") no-repeat center;
+	background-size: cover;
+}
+.news_list ul li{
+	display: block;
+	width: 750px;
+	height: 105.3px;
+	border-bottom: 1px dotted #CCCCCC;
+	padding: 15px 5px;
+}
+.news_list ul li img{
+	display: block;
+	float: left;
+}
+.news_detail{
+	width: 635px;
+	height: 100%;
+	margin-left: 15px;
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 15px; 
+}
+.row>div{
+	padding: 5px;
+}
+.row .user{
+	padding-top: 15px;
+	padding-bottom: 10px;
+	border:1px solid #999;
+	height: 60px;
+}
+.user_img{
+	height: 100%;
+	width: 100%;
+	background:url("../resources/img/user.png") no-repeat center;
+	background-size: contain;
+}
+.footer{
+	width: 100%;
+	height: 86px;
+	background-color: #006EAA;
+}
+.footer .container{
+	width: 1170px;
+	margin: 0 auto;
+	height: 100%;
+	margin-top: 70px;
+	padding: 19px 0;
+}
+.footer img{
+	display: block;
+	float: left;
+}
+.tel_wenzi{
+	float: left;
+	height: 100%;
+	width: 200px;
+	padding: 0 10px;
+}
+.web_info{
+	border-left: 1px solid white;
+	float: left;
+	padding-left: 10px;
+	height: 100%;
+	width: 700px;
+}
+.container{
+	padding:0;
+}

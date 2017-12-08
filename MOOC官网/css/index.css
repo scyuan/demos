@@ -1,0 +1,276 @@
+.banner-div{
+	height: 500px;
+	padding-top: 24px;
+}
+.banner{
+	width: 1150px;
+	height: 444px;
+	margin: 0 auto;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.banner_menu{
+	width: 216px;
+	height: 100%;
+	float: left;
+	background-color: #2B333B;
+	padding: 12px;
+	padding-right: 0px;
+}
+.ul3{
+	height: 100%;
+	display: block;
+}
+.ul3 li{
+	height: 60px;
+	line-height: 60px;
+	color: #A8ACAF;
+	padding-left: 20px;
+	font-size: 16px;
+}
+.ul3 li:hover{
+	background: #5F656B;
+	border-top-left-radius:5px;
+	border-bottom-left-radius: 5px;
+	cursor: pointer;
+	color: #fff;
+}
+.ul3 li img{
+	vertical-align: middle;
+}
+.ul3 li p{
+	display: inline-block;
+	width: 145px;
+}
+.banner-content{
+	width: 934px;
+	height: 100%;
+	float: left;
+}
+.lunbo{
+	height: 316px;
+	overflow: hidden;
+}
+.swiper-container{
+	height: 100%;
+}
+.wenzi{
+	height: 128px;
+	padding: 0 17px;
+}
+.ul4{
+	height: 100%;
+	display: block;
+}
+.ul4 li{
+	float: left;
+	width: 180px;
+	height: 100%;
+	text-align: center;
+	transition:  all 0.2s;
+}
+.ul4 li:hover{
+	transform: translateY(-4px);
+	cursor: pointer;
+}
+.ul4 i{
+	display: inline-block;
+	margin-top: 20px; 
+	margin-bottom: 6px;
+	height: 36px;
+	width: 36px;
+	background: url('../img/path_new.png') no-repeat;
+	background-size: 100%;  /* 加与不加这个属性为什么区别这么大？ */
+}
+.ul4 .web{
+	background-position: 0 0;
+}
+.ul4 .java{
+	background-position: 0 -72px;
+}
+.ul4 .php{
+	background-position: 0 -36px;
+}
+.ul4 .android{
+	background-position: 0 -108px;
+}
+.ul4 .ios{
+	background-position: 0 -144px;
+}
+.ul4 .a{
+	color: #07111B;
+	font-size: 14px;
+}
+.ul4 .b{
+	color: #93999F;
+	font-size: 13px;
+	margin-top: 5px;
+}
+.shizhan{
+	height: 380px;
+
+}
+.shizhan-content{
+	width: 1150px;
+	height: 100%;
+	margin: 0 auto;
+}
+.shizhan-title{
+	text-align: center;
+	letter-spacing: 10px;
+	color: #4D555D;
+	line-height: 36px;
+	font-size: 18px;
+}
+.shizhan-title span{
+	display: inline-block;
+	background: url('../img/icon.png') no-repeat;
+	background-size: 100%;
+	width: 56px;
+	height: 36px;
+	vertical-align: middle;
+}
+.shizhan-title .left-icon{
+	background-position: 0 0;
+	margin-right: 20px;
+}
+.shizhan-title .right-icon{
+	background-position: 0 -36px;
+	margin-left: 20px;
+}
+.shizhan-list{
+	height: 252px;
+	margin-top: 20px;
+}
+.ul5{
+	height: 100%;
+	display: block;
+}
+.ul5 li,.ul6 li{
+	height: 264px;
+	float: left;
+	width: 214px;
+	background: #fff;
+	position: relative;
+}
+.mr20{
+	margin-right: 20px;
+}
+.ul5 .img,.ul6 .img{
+	height: 120px;
+	border-radius: 10px;
+	overflow: hidden;
+
+}
+.ul5 .hot{
+	display: inline-block;
+	color: #fff;
+	width: 35px;
+	height: 24px;
+	text-align: center;
+	line-height: 21px;
+	font-size: 12px;
+	box-sizing: border-box;
+	border-radius: 12px;
+	border: 2px solid #fff;
+	font-weight: bold;
+	position: absolute;
+	background: linear-gradient(to right,#FFA72A,#FFCE82);
+	left: -10px;
+	top: -10px;
+}
+.ul5 .t,.ul6 .t{
+	font-size: 17px;
+	margin: 10px 0;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.ul5 .detail,.ul6 .detail{
+	margin-bottom: 10px;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.ul5 .detail span,.ul6 .detail span{
+	margin-right: 10px;
+	font-size: 12px;
+	color: #93999F;
+}
+.ul5 .p,.ul6 .p{
+	font-size: 15px;
+	color: #4D555D;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.haoke{
+	height: 675px;
+	background: #F8FAFC;
+	box-shadow: 0px 10px 20px rgba(0,0,0,0.1) inset;
+}
+.haoke-content{
+	width: 1150px;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+.haoke-list{
+	height: 528px;
+}
+.ul6{
+	height: 100%;
+	margin-top: 40px;
+}
+.ul6 li a:hover{
+	color: #F01414;
+}
+.rumen{
+	height: 819px;
+	background: #fff;
+	box-shadow: 0px -10px 20px rgba(0,0,0,0.1);
+}
+.rumen-content{
+	width: 1150px;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+.tuijian{
+	height: 108px;
+	margin-top: 20px;
+}
+.tuijian1{
+	width: 565px;
+	height: 100%;
+	background: url('../img/tuijian1.jpg') no-repeat;
+	border-radius: 10px;
+	float: left;
+	text-align: center;
+	line-height: 108px;
+	color:#fff;
+	padding-top: 30px;
+}
+.tuijian .a{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 20px;
+}
+.tuijian .b{
+	font-size: 12px;
+	line-height: 28px;
+}
+.yuanwen{
+	height: 1626px;
+	background: #F8FAFC;
+	box-shadow: 0px 10px 20px rgba(0,0,0,0.1) inset;
+}
+.yuanwen-content{
+	width: 1150px;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+}

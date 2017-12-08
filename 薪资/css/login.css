@@ -1,0 +1,119 @@
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #F26E26;
+}
+div{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.container{
+	width: 768px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+.login{
+	width: 100%;
+}
+.row>div{
+	padding: 0;
+}
+.row{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.login .input_group{
+	display: flex;
+	justify-content: center;	
+	align-items: center;
+	flex-direction: row;
+}
+.login .user_logo{
+	width: 22px;
+	height: 22px;
+	display: block;
+	margin-right: 10px;
+	background:url('../img/user.png') no-repeat center;
+	background-size: contain;
+}
+.login .pass_logo{
+	width: 22px;
+	height: 22px;
+	display: block;
+	margin-right: 10px;
+	background:url('../img/password.png') no-repeat center;
+	background-size: contain;
+}
+.img-responsive{
+	width: 100%;
+}
+input {
+	padding: 0;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid #F6AB84;
+	padding-left: 5px;
+	background-color: #F26E26;
+	display: block;
+	height: 50px;
+	color: #fff;
+	width: 260px;
+}
+input::-webkit-input-placeholder{
+	color: #fff;
+}
+.submitt{
+	height: 50px;
+	border: 1px solid #fff;
+	text-decoration: none;
+	display: block;
+	line-height: 50px;
+	border-radius: 8px;
+	margin: 30px 20px;
+	text-align: center;
+	color: #fff;
+	width: 300px;
+}
+.abtn{
+	display: flex;
+	justify-content: center;
+}
+
+a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+a:active{
+	box-shadow: none;
+}
+.banquan{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 20px;
+	color: #fff;
+	padding: 20px 0;
+	text-align: center;   
+}
+@media all and (max-width: 768px) {
+	.container{
+		width: 100%;
+	}
+}
+@media all and (max-height: 835px) {
+	.banquan{
+		position: relative;
+		color: #fff;
+		padding: 20px 0;
+		margin-top: 10px;
+		   
+	}
+}
+

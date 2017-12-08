@@ -1,0 +1,45 @@
+.mainSlider { 
+	position: relative; 
+	width: 1000px; 
+	height: 300px; 
+	margin: 30px auto 20px auto; 
+	overflow: hidden; 
+}
+.mainSlider .sliderContent { 
+	width: 2000px; 
+	height: 300px; 
+	position: absolute; 
+	left: 0; top: 0; 
+}
+.mainSlider li { 
+	float: left; 
+	display: inline-block; 
+	width: 200px; 
+	height: 300px; 
+	z-index: 1; 
+}
+.mainSlider li#slider1 { 
+	border:2px solid red;
+	box-sizing: border-box;
+	background: url('pic2.png') no-repeat center; 
+}
+.mainSlider li#slider2 { 
+	border:2px solid red;
+	box-sizing: border-box;
+	background: url('pic2.png') no-repeat center; 
+}
+.mainSlider li#slider3 { 
+	border:2px solid red;
+	box-sizing: border-box;
+	background: url('pic2.png') no-repeat center; 
+}
+.mainSlider li#slider4 { 
+	border:2px solid red;
+	box-sizing: border-box;
+	background: url('pic2.png') no-repeat center; 
+}
+.mainSlider li#slider5 { 
+	border:2px solid red;
+	box-sizing: border-box;
+	background: url('pic2.png') no-repeat center; 
+}

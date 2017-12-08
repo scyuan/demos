@@ -1,0 +1,336 @@
+/*大屏幕*/
+@media screen and (min-width: 768px){
+  .model .col-sm-6{
+    height: 700px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+  .model p{
+    color: #fff;
+  }
+  .body_camera{
+   overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+   transition: all 0.4s;
+  }
+  .bgc{
+   position:absolute;
+   top: 0;
+   left:0;
+   width: 100%;
+   height: 100%;
+   /*display: none;*/
+   z-index: -1;
+   background-color: rgba(0,0,0,0.5);
+ }
+  .body_camera:hover img{
+    transform: translate(-20px,0);
+  }
+  .future:hover>a>img{
+    transform: translate(-20px,0);
+  }
+  .value:hover>a>img{
+    transform: translate(-20px,0);
+  }
+  .model .body_camera:hover h2{
+    transform: translate(0,-120px);
+  }
+  .model .future:hover h2, .model p{
+    transform: translate(0,-150px);
+  }
+  .model .value:hover h2{
+    transform: translate(0,-120px);
+  }
+  .body_camera a{
+    transition: all 0.4s;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .body_camera a img{
+    transition: all 0.4s;
+    width: 130%;
+    height: 100%;
+  }
+  .body_camera_text{
+    position: absolute;
+    left: 30px;
+    bottom: 50px;
+    z-index: 2;
+  }
+  .col-sm-6 h2{
+    color: #fff;
+    transition: all 0.4s;
+  }
+  .col-sm-6 .future{
+    height: 48%;
+    margin-bottom: 4%;
+    position: relative;
+    overflow: hidden;
+  }
+  .col-sm-6 .future a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .col-sm-6 .future a img{
+    width: 130%;
+    height: 100%;
+    transition: all 0.4s;
+  }
+  .col-sm-6 .value{
+    height: 48%;
+    position: relative;
+    overflow: hidden;
+  }
+  .col-sm-6 .value a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .col-sm-6 .value a img{
+    width: 130%;
+    height: 100%;
+     transition: all 0.4s;
+  }
+  .future_text,.value_text{
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    color: #fff;
+    text-align: left;
+    width: 80%;
+    z-index: 2;
+  }
+  .future_text p,.value_text p{
+    position: absolute;
+    display: none;
+    top: 300px;
+    color: #fff;
+    transition: all 0.4s;
+  }
+  .body_camera p{
+    display: none;
+    position: absolute;
+    top: 300px;
+  }
+  .model .big_pic{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    background: url(".../videoPlay.png") no-repeat;
+    background-size: cover;
+  }
+  .new_actives .active_pic{
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/*小屏幕*/
+
+
+@media screen and (max-width: 768px){
+  .model .col-sm-6{
+    margin-top: 30px;
+  }
+  .model .col-sm-6 h2{
+    line-height: 20px;
+    color:#333333;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .model .col-sm-6 p{
+    line-height: 25px;
+    font-size: 16px;
+    color:#333333;
+    margin-bottom: 20px;
+
+  }
+}
+
+ .carousel .carousel-indicators li{
+  background-color: #ccc;
+  margin: 0 5px;
+}
+ .active{
+  background-color: #fff !important;
+}
+
+
+
+/*轮播图部分*/
+
+ .carousel{
+  margin-bottom: 20px;
+}
+
+
+/*model部分*/
+
+ .model{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+ .model img{
+  width: 100%;
+  height:auto;
+}
+ .model h2{
+  line-height: 30px !important;
+}
+ .col-xs-12 a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+ .show{
+  top: 100px;
+  display: block;
+  transition: all 0.4s;
+}
+ .model .col-xs-12 img{
+  width: 100%;
+  height: auto;
+}
+ .model .big_pic{
+  position: relative;
+  width: 100%;
+  height: 594px;
+  margin-bottom: 20px;
+  background: url("../img/lunbo.jpg") no-repeat;
+  background-size: cover;
+}
+ .model .big_pic:hover{
+  cursor: pointer;
+ }
+.big_pic .play_pic{
+  position: absolute;
+  width: 108px;
+  height: 108px;
+  top: 50%;
+  left: 50%;
+  margin-top: -54px;
+  margin-left: -54px;
+}
+.big_pic .mengban{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,rgba(49,40,34,0.2),rgba(255,255,255,0.2),rgba(49,40,34,0.2));
+}
+
+.video_window{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform:translateX(-50%) translateY(-50%);
+  width: 900px;
+  height: 450px;
+  /*position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  width: 900px;
+  height: 450px;
+  background: black;*/
+  display: none;
+  z-index: 10000;
+}
+@media only screen and (max-width: 800px){
+    .video_window{
+      max-height: 100%;
+      width: 90%;
+    }
+}
+
+.video_window .x{
+  position: absolute;
+  visibility: hidden;
+  right: 4px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  float: right;
+  background: url("../img/x.png") no-repeat;
+  background-color: orange;
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-size: contain;
+  z-index: 101;
+}
+.video_window .x:hover{
+  cursor: pointer;
+}
+.video_window .video{
+  width: 100%;
+  height: 100%;
+}
+.video video{
+  object-fit: contain;
+}
+
+/*新闻活动部分*/
+
+ .new_actives{
+  background-color: #F5F5F5;
+  width: 100%;
+ padding: 30px 0;
+}
+ .new_actives .col-sm-6{
+   margin-bottom: 20px;
+ }
+ .new_actives a{
+  color: #333333 !important;
+}
+ .new_actives a:hover>h2,a:hover>h4{
+  text-decoration:underline;
+  color: #ff8000 !important;
+ }
+ .new_actives a:hover>p{
+  text-decoration:underline;
+  color: #ff8000 !important;
+}
+ .new_actives p{
+  color: #333333 !important;
+  transform: translate(0,0) !important;
+}
+
+ .new_actives h2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000;
+}
+ .new_actives h4{
+  margin-top: 5px;
+}
+ .new_actives p{
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 5px;
+}
+ .new_actives .actives p{
+  font-size: 16px;
+  width: 70%;
+  line-height: 25px;
+}
+ .new_actives span{
+  font-size: 12px;
+  color: #99B0D2;
+}
+ .new_actives img{
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+

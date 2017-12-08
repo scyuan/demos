@@ -1,0 +1,103 @@
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #EDEDED;
+}
+.container{
+	width: 768px;
+	margin: 0 auto;
+	padding: 0;
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+@media all and (max-width: 768px) {
+	.container{
+		width: 100%;
+	}
+}
+.header{
+	width: 100%;
+	height: 60px;
+	padding: 0 15px;
+	background-color: #F26E26;
+	text-align: center;
+	line-height: 60px;
+	font-size: 18px;
+	color: #fff;
+	position: relative;
+}
+.header a{
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 15px;
+	top: 20px;
+	background: url('../img/left_jiantou.png') no-repeat center;
+	background-size: contain;
+}
+.content{
+	width: 100%;
+	padding: 0 15px;
+	padding-top: 15px;
+	position: relative;
+}
+#myForm{
+	display: block;
+	width: 100%;
+	background: #fff;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+#myForm input{
+	outline: none;
+	background-color: #fff;
+	border: none;
+	border-bottom: 1px solid #E96824;
+	height: 25px;
+	width: 240px;
+	padding-left: 5px;
+}
+.input_group{
+	width: 100%;
+	padding: 10 15px;
+	height: 40px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.input_group span{
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+}
+.submit-btn{
+	height: 40px;
+	width: 140px;
+	margin: 0 auto;
+	margin-top: 15px;
+	background: #E96824;
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+}
+.books{
+	height: 5px;
+	width: 100%;
+	position: relative;
+}
+.a{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	background: url('../img/book.png') no-repeat;
+	background-size: auto 100%;
+	background-repeat: repeat-x;
+	background-clip: content-box;
+}

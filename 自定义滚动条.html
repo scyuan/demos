@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+	<title>自定义滚动条</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+			margin: 0;padding: 0;
+		}
+		body{
+			background-color: #FFB18C;
+		}
+		.scroll-box{
+			width: 600px;
+			background-color: wihet;
+			margin: 100px auto;
+			background-color: white;
+			border:1px solid #ccc;
+		}
+		ul{
+			line-height: 40px;
+			list-style-type: none;
+			width: 100%px;
+			height: 40px;
+			display: block;
+			background-color: #c1c1c1;
+		}
+		li{
+			float:left;
+			display: block;
+			padding: 0 20px;
+		}
+		.tab-active{
+			border-top: 2px solid #008000;
+			background-color: white;
+			margin-top: -2px;
+			color: #008000;
+		}
+		.scroll-wrap{
+			/* padding: 20px; */
+			height: 600px;
+			
+			position: relative;
+		}
+		.scroll-cont{
+			height: 100%;
+			overflow: hidden;
+		}
+		.anchor{
+			text-align: center;
+
+		}
+		.scroll-ol p{
+			text-indent: 2em;
+			text-align: justify;
+			padding: 20px;
+		}
+		.scroll-bar{
+			height: 100%;
+			width: 10px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			background-color: #c1c1c1;
+			border-top: 1px solid white;
+		}
+		.scroll-slide{
+			height: 180px;
+			width: 9px;
+			background-color: white;
+			margin-top: 1px;
+			margin-left: 1px;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- 容器 -->
+	<div class="scroll-box">
+		<!-- 标签切换区 -->
+		<ul class="scroll-tab">
+			<li class="tab-item tab-active">第一篇</li>
+			<li class="tab-item">第二篇</li>
+			<li class="tab-item">第三篇</li>
+			<li class="tab-item">第四篇</li>
+		</ul>
+		<!-- 滚动内容区 -->
+		<div class="scroll-wrap">
+			<!-- 滚动内容 -->
+			<div class="scroll-cont">
+				<div class="scroll-ol">
+					<h3 class="anchor">春天来了</h3>
+					<p>冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！</p>
+					
+				</div>
+				<div class="scroll-ol">
+					<h3 class="anchor">夏天来了</h3>
+					<p>冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！</p>
+					
+				</div>
+				<div class="scroll-ol">
+					<h3 class="anchor">秋天来了</h3>
+					<p>冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！</p>
+				</div>
+				<div class="scroll-ol">
+					<h3 class="anchor">冬天来了</h3>
+					<p>冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！冬天过去了，春天来了。冬眠的动物们都醒来了。小青蛙慢吞吞地跳出洞来，呱呱地叫了几声，好像在说：“春天那么快就来了，我还没睡够呢！”大狗熊摇摇摆摆的走了出来，说：“春天怎么那么快就来了？”刺猬慢慢地爬出来，说：“春天终于来啦！”冬眠的动物们都出来了，小青蛙在池塘边跳来跳去，大狗熊在四处找蜂蜜，小刺猬开心地在地上滚来滚去……这一切都告诉我们，春天来啦！</p>
+				</div>
+			</div>
+			<!-- 滚动条 -->
+			<div class="scroll-bar">
+				<div class="scroll-slide">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function(win,doc,$){
+			//options:一些配置信息
+			function CusScrollBar(options){
+				this._init(options);
+				/*var a = {a:"",b:"22"}
+				var b = {a:"1",b:"222"}
+				var c = $.extend(true,a,b); 
+				console.log(c);*/
+			}
+			$.extend(CusScrollBar.prototype,{
+				_init:function(options) {
+					var self = this;
+					self.options = {
+						scrollDir      : "y",//滚动方向
+						contSelector   : "",//滚动内容选择器
+						barSelector    : "",//滚动条选择器
+						sliderSelector : "",//滑块选择器
+						wheelStep      : 10, //滚动步长（鼠标移动一下，内容滚动的幅度）
+						tabItemSelector: '.tab-item', //标题选择器
+						tabActiveClass : 'tab-active', //选中标签类名,注意这里没有类名的.
+						anchorSelector : '.anchor'//锚点选择器
+					}
+					//通过extend来进行对象的赋值，初始化赋值
+					$.extend(true,self.options,options||{});
+					self._initDomEvent();
+					return self;
+				},
+				/*初始化DOM的引用*/
+				_initDomEvent : function(){
+					var opts = this.options;
+					// 滚动内容区对象
+					this.$cont = $(opts.contSelector);
+					// 滚动滑块对象
+					this.$slider = $(opts.sliderSelector);
+					// 滚动条对象
+					this.$bar = $(opts.barSelector);
+					// 获取文档对象
+					this.$doc = $(doc);
+					/*//锚点项
+		 			this.$anchor = $(opts.anchorSelector);*/
+					this._initSliderDragEvent()._bindContScroll();
+				},
+				/*初始化滑块拖动功能*/
+				_initSliderDragEvent : function(){
+					var self = this;
+					var slider = this.$slider,
+						sliderEl = slider[0];
+					/*slider = this.$slider  得到jquery对象
+					  sliderEl = slider[0]获得相应的DOM元素 可以用DOM的所有属性和方法
+					*/
+					//如果DOM元素存在
+					if (sliderEl) {
+						var doc = this.$doc,
+							dragStartPagePostion,
+							dragStartScrollPostion,
+							dragContBarRate;
+						function mousemoveHandler(e) {
+							e.preventDefault();
+							if (dragStartPagePostion == null) {
+								return;
+							}
+							//内容开始超出的高度+rate*(鼠标释放的位置-开始的位置) == 就是内容滑动的位置
+							self.scrollTo(dragStartScrollPostion + (e.pageY - dragStartPagePostion)*dragContBarRate);
+						}
+
+						slider.on('mousedown', function(e){
+							e.preventDefault();
+							// 获取鼠标的点击的开始位置
+							dragStartPagePostion = e.pageY;
+							// 获取内容区域的向上卷区的高度
+							dragStartScrollPostion = self.$cont.scrollTop();
+							/*console.log("self.getMaxScrollPosition()="+self.getMaxScrollPosition());*/
+							dragContBarRate = self.getMaxScrollPosition()/self.getMaxSliderPosition();
+							// 监听的document对象
+							doc.on('mousemove.scroll', mousemoveHandler).on('mouseup.scroll',function(){
+								doc.off('.scroll');
+							});
+						});
+					return self;
+					}
+				},
+				//计算滑块当前位置
+				getSliderPosition : function(){
+					var self = this,
+						//滑块最大的可移动距离
+						maxSliderPosition = self.getMaxSliderPosition();
+						//滑块移动的距离
+						/*console.log(self.$cont[0].scrollTop);*/
+						return Math.min(maxSliderPosition,maxSliderPosition*self.$cont[0].scrollTop/self.getMaxScrollPosition());
+				},
+				//内容可滚动高度
+				getMaxScrollPosition : function(){
+					var self = this;
+					/*console.log("self.$cont:"+self.$cont.height());
+					console.log("self.$cont[0]:"+self.$cont[0].scrollHeight);*/
+					return Math.max(self.$cont.height(),self.$cont[0].scrollHeight) - self.$cont.height();
+				},
+				//计算滑块可移动距离
+				getMaxSliderPosition : function(){
+					var self = this;
+					return self.$bar.height()-self.$slider.height();
+				},
+				//监听内容的滚定，同步滑块的位置
+				_bindContScroll : function(){
+					var self = this;
+					self.$cont.on('scroll',function(){
+						var sliderEl = self.$slider && self.$slider[0];
+						if (sliderEl) {	
+							sliderEl.style.top = self.getSliderPosition() + "px";
+						}
+						/*var sliderEl = self.$slider;
+						sliderEl.css({
+							top : self.getSliderPosition() + "px"
+						});*/
+					});
+					return self;
+				},
+				// 内容的滑动
+				scrollTo: function(positionVal) {
+					var self  = this;
+					self.$cont.scrollTop(positionVal);
+				},
+			/*	// 获取每个锚点位置信息的数组
+				getAllAnchorPosition: function() {
+					var self = this,
+			   	 		allPositonArr = [];
+					for (var i = 0; i < self.$anchor.length; i++) {
+				 		allPositonArr.push(self.$cont[0].scrollTop + self.getAnchorPosition(i))
+					}
+					return allPositonArr;
+				},
+				// 获取锚点内容与上边界的像素数(锚点h3)
+				getAnchorPosition: function(index) {
+					return this.$anchor.eq(index).position().top;
+				},*/
+			})
+			/*CusScrollBar.prototype._init = function() {
+				// body...
+				console.log("test");
+			};*/
+			/*Scroll.scrollbar = CusScrollBar;*/
+			win.CusScrollBar = CusScrollBar;
+		})(window,document,jQuery);
+		new CusScrollBar({
+			contSelector   : ".scroll-cont",//滚动内容选择器
+			barSelector    : ".scroll-bar",//滚动条选择器
+			sliderSelector : ".scroll-slide"//滑块选择器
+		});
+	</script>
+</body>
+</html>

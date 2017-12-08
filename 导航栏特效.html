@@ -1,0 +1,108 @@
+<!-- 带有一个特效的导航栏的简易过程
+1.导航栏的css
+2.下面的一条横线
+3.以上2条都很简单
+4.实现放大的水波纹的特效 js添加一个div，通过计算算出top和left
+  实现主要有两个问题
+  	1.定位问题
+  	2.就是水波纹特效的放大动作之后回到了原来了初始状态，这个时候初始状态要加上
+  	  transform：scale（0）表示默认这个鬼东西是不显示的。 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+	<title>导航栏特效</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			border: 0;
+			list-style-type: none;
+		}
+		.tab_wrap{
+			position: relative;
+			width: 600px;
+			height: 100px;
+			margin: 0 auto;
+			margin-top: 100px;
+			background-color: #E95546
+		}
+		.item{
+			float: left;
+			width: 200px;
+			height:100%;
+			line-height: 100px;
+			font-size: 26px;
+			color: white;
+			text-align: center;		
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.slider{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 4px;
+			width: 200px;
+			background-color: #656468;
+		}
+		.ripple{
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			position: absolute;
+			transform: scale(0);
+			background: rgba(255, 255, 255, 0.4);
+		}
+		.ripple-effect{
+			animation: effect 0.4s;
+		}
+		@keyframes effect{
+			100% {
+				transform: scale(2);
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="tab_wrap">
+		<ul class="ul" id="ul">
+			<li class="item">PART ONE</li>
+			<li class="item">PART TWO</li>
+			<li class="item">PART THREE</li>
+		</ul>
+		<div class="slider" id="slider"></div>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		var $slider = $("#slider");
+		$(".item").on("click",function(e){
+			var leftx = 200;
+			var index = $(this).index();
+			var leftx = leftx * index;
+			$slider.stop().animate({left:leftx},200);
+			
+			$(".ripple").remove();
+
+			var posX = $(this).offset().left,
+     		 	posY = $(this).offset().top
+
+      		$(".tab_wrap").append("<div class='ripple'></div>");
+  			var x = e.pageX - posX - 100 + index*200;
+  			var y = e.pageY - posY - 100;
+
+  			$(".ripple").css({
+    			width: '200px',
+    			height: '200px',
+    			top: y + 'px',
+    			left: x + 'px'
+  			}).addClass("ripple-effect");
+
+		});
+
+	});
+	</script>
+</body>
+</html>

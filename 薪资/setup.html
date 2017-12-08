@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<title>设置</title>
+	<link rel="stylesheet" type="text/css" href="css/ydui.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/setup.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<a href="javascript:;"></a>
+			<p>修改密码</p>
+		</div>
+		<div class="content">
+			<form id="myForm" class="clearfix">
+				<div class="input_group">
+					<span>工号</span>
+					<input type="text" id='id'>
+				</div>
+				<div class="input_group">
+					<span>旧密码</span>
+					<input type="password" id='old_pwd'>
+				</div>
+				<div class="input_group">
+					<span>新密码</span>
+					<input type="password" id='new_pwd'>
+				</div>
+				<div class="input_group">
+					<span>确认密码</span>
+					<input type="password" id="repeat_pwd">
+				</div>
+				<div class="submit-btn" id='submit'>提&nbsp;交</div>
+			</form>
+			<div class="books">
+				<div class="a"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src='js/jquery-3.2.0.min.js'></script>
+<script type="text/javascript" src='js/ydui.js'></script>
+<script type="text/javascript">
+
+    var $id = $('#id');
+    var $old_pwd = $('#old_pwd');
+    var $new_pwd = $('#new_pwd');
+    var $repeat_pwd = $('#repeat_pwd'); 
+
+    var dialog = window.YDUI.dialog;
+    var valid =true;
+
+	$('#submit').on('click',function(){
+		if($id.val()==''||$old_pwd.val()==''||$new_pwd.val()==''||$repeat_pwd.val()==''){
+			valid = false;
+			dialog.toast('不能为空', 'error', 1000);
+		}
+		if (valid&&($old_pwd.val()!=$new_pwd.val())) {
+			valid = false;
+			dialog.toast('两次密码不一致', 'error', 1000);
+		}
+		if(valid){
+			//判断工号是否正确或者存在
+			//错误  dialog.toast('工号错误', 'error', 1000);
+
+			//工号正确是否密码正确
+			//错误 dialog.toast('密码错误', 'error', 1000);
+		}
+		if (valid) {
+			dialog.toast('修改成功', 'success', 1000,function(){
+				//提交表单
+
+				
+			});
+		}
+	});
+
+</script>
+</html>

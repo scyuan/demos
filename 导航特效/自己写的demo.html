@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jQuery弹性滑动导航菜单</title>
+<style type="text/css">
+.nav{
+	position: relative;
+	height: 50px;
+	width: 1000px;
+	background-color: black;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-bottom: 2px solid #FF8201;
+}
+.nav_menu{
+	height: 50px;
+}
+ul{
+	position: relative;
+	list-style-type: none;
+	padding: 0;
+}
+ul li{
+	padding: 0;
+	margin: 0;
+	padding: 0 25px;
+	line-height: 50px;
+	display: inline-block;
+	float: left;
+}
+a{
+	font-size: 18px;
+	text-decoration: none;
+	color: white;
+}
+.curr_item{
+	position: absolute;
+	bottom: -2px;
+	height: 2px;
+	background-color: white;
+	/*transition: width 2s;*/
+}
+</style>
+<script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var $nav_menu = $(".nav_menu");
+	var defaultWidth = $nav_menu.find(".current").innerWidth();
+	var defaultLeft = $nav_menu.find(".current").position().left;
+
+	var $curr_item = $(".curr_item");
+	$curr_item.css({width:defaultWidth,left:defaultLeft});
+
+	$nav_menu.find("li").hover(function(){
+		var awidth = $(this).innerWidth();
+		var aleft = $(this).position().left;
+		$curr_item.stop().animate({
+			left:aleft,
+			width:awidth
+		},300);
+	},function(){
+		$curr_item.stop().animate({
+			left:defaultLeft,
+			width:defaultWidth
+		},300);
+	});
+
+});
+</script>
+</head>
+<body>
+	<div class="nav">
+		<div class="nav_menu">
+			<ul>
+				<li class="current"><a href="#">北京</a></li>
+				<li><a href="#">伦敦</a></li>
+				<li><a href="#">加拿大</a></li>
+				<li><a href="#">西伯利亚</a></li>
+				<li><a href="#">巴黎</a></li>
+				<li><a href="#">纽约</a></li>
+				<li><a href="#">洛杉矶</a></li>
+			</ul>
+		</div>
+		<div class="curr_item"></div>
+	</div>
+
+</body>
+</html>

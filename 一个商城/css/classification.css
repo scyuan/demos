@@ -1,0 +1,102 @@
+.class-content{
+	width: 1140px;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 15px;
+	/* overflow: auto; */
+}
+.pos-r{
+	position: relative;
+}
+.catalog{
+	width: 185px;
+	/*height: 836px;*/
+	float: left;
+	background-color: #F3F3F3;
+	border: 1px solid #D7D7D7;
+	border-bottom: 0;
+}
+.goods-list{
+	float: right;
+	width: 950px;
+}
+.c3{
+	width: 100%;
+	height: 35px;
+	border-bottom: 1px solid #d7d7d7;
+	line-height: 35px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+.c3-content{
+	padding-left: 20px;
+	border-bottom: 1px solid #d7d7d7;
+}
+.c3-content-l{
+	float: left;
+}
+.c3-content-r{
+	margin-left: 30px;
+	float: left;
+}
+.c3-content p{
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px;
+	padding-left: 0;
+}
+.c3-content ul li{
+	font-size: 12px;
+	padding: 4px;
+	padding-left: 0;
+}
+.goods-list .img-wrap{
+	width: 100%;
+	height: 326px;
+	background: url('../img/lunbo.png') no-repeat center;
+	background-size: cover;
+}
+.goods-content{
+	width: 100%;
+}
+.goods-content ul{
+	width: 100%;
+	height: 260px;
+	padding-top: 15px;
+}
+.goods-content ul li{
+	float: left;
+	width: 25%;
+	padding: 0 35px;
+	height: 100%;
+	display: block;
+}
+.goods_img{
+	width: 100%;
+	height: 140px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.goods-content ul li .wenzi{
+	font-size: 13px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+.price-tag{
+	color: #D40F5A;
+	font-size: 13px;
+	text-align: left;
+	font-weight: bold;
+}
+.comment{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 13px;
+}
+.comment span{
+	color: #075C9B;
+}
